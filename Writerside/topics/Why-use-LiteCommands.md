@@ -1,0 +1,104 @@
+# Why use LiteCommands?
+
+LiteCommands is a versatile and feature-rich command framework designed to simplify 
+command handling for a wide range of platforms and implementations. Whether you're 
+developing for Velocity, Bukkit, Paper, BungeeCord, Minestom, JDA, or other systems, 
+LiteCommands has got you covered.
+
+## Easy Integration
+LiteCommands seamlessly integrates with various platforms, making it effortless to manage
+commands across different systems. Whether you're building a plugin or a mod,
+LiteCommands ensures a consistent and convenient command experience.
+
+## More Clear Logic
+LiteCommands offers a more intuitive and clear approach to handling commands when 
+compared to the traditional Bukkit method. 
+
+For example if you want to create a command that toggles chat, you would have to do something like this:
+
+```java
+@Command(name = "chat")
+@Permission("command.chat")
+public class ChatCommand {
+
+    private final ChatManager chatManager = new ChatManager();
+
+    @Execute(name = "on")
+    void enableChat(@Context CommandSender sender) {
+        this.chatManager.enableChat();
+    }
+
+    @Execute(name = "off")
+    void disableChat(@Context CommandSender sender) {
+        this.chatManager.disableChat();
+    }
+
+    @Execute(name = "clear")
+    @Permission("command.chat.clear")
+    void clearChat(@Context CommandSender sender, @Arg int lines) {
+        this.chatManager.clearChat(lines);
+    }
+    
+}
+```
+
+Compared to the Bukkit way:
+
+```Java
+public class BukkitWayCommand implements CommandExecutor {
+
+    private final ChatManager chatManager = new ChatManager();
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!sender.hasPermission("command.chat")) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+            return true;
+        }
+        
+        if (args.length == 0) {
+            this.usage(sender);
+            return true;
+        }
+        
+        if (args[0].equalsIgnoreCase("on")) {
+            this.chatManager.enableChat();
+            return true;
+        }
+        
+        if (args[0].equalsIgnoreCase("off")) {
+            this.chatManager.disableChat();
+            return true;
+        }
+        
+        if (args.length == 2 && args[0].equalsIgnoreCase("clear")) {
+            if (!sender.hasPermission("command.chat.clear")) {
+                sender.sendMessage(ChatColor.RED + "You do not have permission to use this command.");
+                return true;
+            }
+            
+            try {
+                int lines = Integer.parseInt(args[1]);
+                this.chatManager.clearChat(lines);
+            } catch (NumberFormatException exeption) {
+                sender.sendMessage(ChatColor.RED + "Invalid argument: " + args[1] + " is not a number.");
+            }
+            
+            return true;
+        }
+
+        this.usage(sender);
+        return true;
+    }
+    
+    private void usage(CommandSender sender) {
+        sender.sendMessage(ChatColor.RED + "Usage:");
+        sender.sendMessage(ChatColor.RED + " - /chat on");
+        sender.sendMessage(ChatColor.RED + " - /chat off");
+        sender.sendMessage(ChatColor.RED + " - /chat clear <lines>");
+    }
+    
+}
+```
+
+
