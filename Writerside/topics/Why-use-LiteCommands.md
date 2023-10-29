@@ -1,20 +1,24 @@
 # Why use LiteCommands?
 
-LiteCommands is a versatile and feature-rich command framework designed to simplify 
-command handling for a wide range of platforms and implementations. Whether you're 
-developing for Velocity, Bukkit, Paper, BungeeCord, Minestom, JDA, or other systems, 
-LiteCommands has got you covered.
+LiteCommands is a versatile and feature-rich command framework
+designed to simplify command handling for a wide range of platforms and implementations.
+Providing a simple and intuitive API, LiteCommands makes it easy to create and manage commands
+for your minecraft plugin, mod, or discord bot.
 
-## Easy Integration
+## Cross-Platform Integration
 LiteCommands seamlessly integrates with various platforms, making it effortless to manage
-commands across different systems. Whether you're building a plugin or a mod,
-LiteCommands ensures a consistent and convenient command experience.
+commands across different systems.
+Whether you're developing for Velocity, Bukkit, Paper, BungeeCord, Minestom, JDA,
+or any other platform, LiteCommands has you covered.
+
+See the [Platforms](Platforms.md) page for more information.
 
 ## More Clear Logic
-LiteCommands offers a more intuitive and clear approach to handling commands when 
-compared to the traditional Bukkit method. 
+LiteCommands offers a more intuitive and clear approach to handling commands when
+compared to the traditional methods. 
 
-For example if you want to create a command that toggles chat, you would have to do something like this:
+For example, if you want to create a command that toggles chat, you would have to do
+something like this:
 
 ```java
 @Command(name = "chat")

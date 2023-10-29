@@ -4,7 +4,10 @@
 
 <instance-profile id="litecommands"
                  name="LiteCommands"
-                 start-page="Why-use-LiteCommands.md">
+                 start-page="Introdution.md">
 
-    <toc-element topic="Why-use-LiteCommands.md"/>
+    <toc-element topic="Introdution.md">
+        <toc-element topic="Why-use-LiteCommands.md"/>
+    </toc-element>
+    <toc-element topic="Platforms.md"/>
 </instance-profile>
