@@ -14,14 +14,16 @@ or any other platform, LiteCommands has you covered.
 See the [Platforms](Platforms.md) page for more information.
 
 ## More Clear Logic
-LiteCommands offers a more intuitive and clear approach to handling commands when
-compared to the traditional methods. 
 
-For example, if you want to create a command that toggles chat, you would have to do
-something like this:
+LiteCommands offers a more intuitive and clear approach to handling commands when
+compared to the traditional methods.
+
+<tabs>
+<tab title="LiteCommands">
 
 ```java
-@Command(name = "chat")
+
+@[[[Command|Platforms.md]]](name = "chat")
 @Permission("command.chat")
 public class ChatCommand {
 
@@ -46,7 +48,8 @@ public class ChatCommand {
 }
 ```
 
-Compared to the Bukkit way:
+</tab>
+<tab title="Traditional">
 
 ```Java
 public class BukkitWayCommand implements CommandExecutor {
@@ -104,5 +107,5 @@ public class BukkitWayCommand implements CommandExecutor {
     
 }
 ```
-
-
+</tab>
+</tabs>

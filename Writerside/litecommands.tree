@@ -8,6 +8,7 @@
 
     <toc-element topic="Introdution.md">
         <toc-element topic="Why-use-LiteCommands.md"/>
+        <toc-element topic="Getting-started.md"/>
     </toc-element>
     <toc-element topic="Platforms.md"/>
 </instance-profile>
