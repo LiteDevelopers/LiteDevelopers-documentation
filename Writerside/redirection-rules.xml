@@ -14,4 +14,8 @@
         <description>Created after removal of "This is the first topic" from Help Instance</description>
         <accepts>Default-topic.html</accepts>
     </rule>
+    <rule id="3cfa662e">
+        <description><![CDATA[Created after removal of "<Why-use-LiteCommands.md>" from LiteCommands]]></description>
+        <accepts>Why-use-LiteCommands.html</accepts>
+    </rule>
 </rules>

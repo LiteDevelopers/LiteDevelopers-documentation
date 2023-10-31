@@ -1,6 +1,7 @@
 # Getting started
 
-This page will help you to get started with LiteCommands. 
+This page will guide you through the process of setting up LiteCommands in your project.
+After reading this page, you will be able to use LiteCommands in your project.
 
 ## Requirements
 
@@ -34,5 +35,6 @@ implementation("dev.rollczi:[[[ARTIFACT_ID|Platforms.md]]]:3.0.1")
 
 </tabs>
 
-Replace [ARTIFACT_ID](Platforms.md) with the artifact ID of the platform you want to use. 
-You can find all of them in the [Platforms](Platforms.md) page.
+> Replace [ARTIFACT_ID](Platforms.md) with the artifact ID of the platform you want to use. 
+> You can find all of them in the [Platforms](Platforms.md) page.
+{ style="warning" }
