@@ -11,7 +11,10 @@
     </toc-element>
     <toc-element topic="Platforms.md">
         <toc-element topic="SENDER.md"/>
-        <toc-element topic="Bukkit-Platform.md"/>
+    </toc-element>
+    <toc-element topic="Features.md">
+        <toc-element topic="Arguments.md">
+        </toc-element>
     </toc-element>
     <toc-element topic="Adventure-Kyori.md">
         <toc-element topic="adventure.md"/>

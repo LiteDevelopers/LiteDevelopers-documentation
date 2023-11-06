@@ -18,4 +18,16 @@
         <description><![CDATA[Created after removal of "<Why-use-LiteCommands.md>" from LiteCommands]]></description>
         <accepts>Why-use-LiteCommands.html</accepts>
     </rule>
+    <rule id="69b50e61">
+        <description>Created after removal of "Bukkit" from LiteCommands</description>
+        <accepts>Bukkit-Platform.html</accepts>
+    </rule>
+    <rule id="6406aeae">
+        <description>Created after removal of "@Arg Annotation" from LiteCommands</description>
+        <accepts>Arg.html</accepts>
+    </rule>
+    <rule id="66f09aab">
+        <description>Created after removal of "Programmatic Argument" from LiteCommands</description>
+        <accepts>Programmatic-Argument.html</accepts>
+    </rule>
 </rules>
