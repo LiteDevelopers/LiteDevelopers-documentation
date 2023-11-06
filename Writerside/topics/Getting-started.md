@@ -1,21 +1,46 @@
 # Getting started
 
-This page will guide you through the process of setting up LiteCommands in your project.
-After reading this page, you will be able to use LiteCommands in your project.
+This page will guide you through the process of adding LiteCommands to your project.
+<tip>
+LiteCommands requires Java 8 or higher.
+</tip>
 
-## Requirements
+### Add Panda Repository
 
-Please make sure that you have the following requirements before you start:
-
-- Java 8 or higher
-- Dependency manager as [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/)
-
-## Installation
-
-Setup your project with one of the following artifacts:
+Depending on the build system you are using, add the following repository to your project:
 
 <tabs>
 <tab title="Gradle KTS">
+
+Add the following line to your `build.gradle.kts` file in the `repositories` section:
+<br/><br/>
+
+```kotlin
+maven("https://repo.panda-lang.org/releases")
+```
+</tab>
+
+<tab title="Maven">
+
+Add the following lines to your `pom.xml` file in the `repositories` section:
+<br/><br/>
+
+```xml
+<repository>
+    <id>panda-repo</id>
+    <url>https://repo.panda-lang.org/releases</url>
+</repository>
+```
+</tab>
+</tabs>
+
+### Add LiteCommands Dependency
+
+<tabs>
+<tab title="Gradle KTS">
+
+Add the following line to your `build.gradle.kts` file in the `dependencies` section:
+<br/><br/>
 
 ```kotlin
 implementation("dev.rollczi:[[[ARTIFACT_ID|Platforms.md]]]:3.0.1")
@@ -23,6 +48,9 @@ implementation("dev.rollczi:[[[ARTIFACT_ID|Platforms.md]]]:3.0.1")
 </tab>
 
 <tab title="Maven">
+
+Add the following lines to your `pom.xml` file in the `dependencies` section:
+<br/><br/>
 
 ```xml
 <dependency>

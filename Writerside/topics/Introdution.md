@@ -1,8 +1,6 @@
 # Introduction
 
-Welcome to the LiteCommands documentation! Here you will find everything you need to know about LiteCommands.
-
-## Why use LiteCommands?
+<img alt="litecommands.png" src="litecommands.png" width="480"/>
 
 LiteCommands is a versatile and feature-rich command framework
 designed to simplify command handling for a wide range of platforms and implementations.
