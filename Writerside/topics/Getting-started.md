@@ -9,8 +9,8 @@ LiteCommands requires Java 8 or higher.
 
 Depending on the build system you are using, add the following repository to your project:
 
-<tabs>
-<tab title="Gradle KTS">
+<tabs group="languages">
+<tab title="Gradle KTS" group-key="gradle">
 
 Add the following line to your `build.gradle.kts` file in the `repositories` section:
 <br/><br/>
@@ -20,7 +20,7 @@ maven("https://repo.panda-lang.org/releases")
 ```
 </tab>
 
-<tab title="Maven">
+<tab title="Maven" group-key="maven">
 
 Add the following lines to your `pom.xml` file in the `repositories` section:
 <br/><br/>
@@ -36,8 +36,8 @@ Add the following lines to your `pom.xml` file in the `repositories` section:
 
 ### Add LiteCommands Dependency
 
-<tabs>
-<tab title="Gradle KTS">
+<tabs group="languages">
+<tab title="Gradle KTS" group-key="gradle" >
 
 Add the following line to your `build.gradle.kts` file in the `dependencies` section:
 <br/><br/>
@@ -47,7 +47,7 @@ implementation("dev.rollczi:[[[ARTIFACT_ID|Platforms.md]]]:3.0.1")
 ```
 </tab>
 
-<tab title="Maven">
+<tab title="Maven" group-key="maven">
 
 Add the following lines to your `pom.xml` file in the `dependencies` section:
 <br/><br/>
