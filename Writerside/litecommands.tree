@@ -12,11 +12,12 @@
     <toc-element topic="Platforms.md">
         <toc-element topic="SENDER.md"/>
     </toc-element>
-    <toc-element topic="Features.md">
-        <toc-element topic="Arguments.md">
-        </toc-element>
-    </toc-element>
     <toc-element topic="Command-Structure.md"/>
+    <toc-element topic="Arguments.md">
+        <toc-element topic="Supported-Types.md"/>
+        <toc-element topic="Unsupported-Types-TODO.md"/>
+        <toc-element topic="Custom-Types.md"/>
+    </toc-element>
     <toc-element topic="Adventure-Kyori.md">
         <toc-element topic="adventure.md"/>
         <toc-element topic="adventure-platform.md"/>

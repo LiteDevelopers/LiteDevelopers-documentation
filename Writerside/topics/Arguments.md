@@ -1,78 +1,67 @@
 # Argument
 
-Argument is a value that is passed to the command. 
-For example, you can use the `String` object as an argument in your command:
+Arguments are used to get the values from the command sender.
 
-<tabs>
-<tab title="Annotation">
+## @Arg Argument
+
+`@Arg` is the most common argument. It is used to get the value from the command sender.
 
 ```java
-@Command(name = "say")
-public class SayCommand {
+@Command(name = "ban")
+public class BanCommand {
     @Execute
-    public void ban(@Arg String text) {
+    public void ban(@Arg Player player) {
         // ...
     }
 }
 ```
-</tab>
-<tab title="Programmatically">
+
+## @Flag Argument
+
+`@Flag` is used to get the value from the command sender, but it is optional.
 
 ```java
-new LiteCommand<CommandSender>("say")
-    .argument("text", String.class)
-    .onExecute(context -> {
-        String text = context.argument("text", String.class);
-        // ...
-    })
-```
-</tab>
-
-<tab title="Programmatic (class)">
-
-```java
-public class SayCommand extends LiteCommand<CommandSender> {
-    public SayCommand() {
-        super("say");
-        argument("text", String.class);
-    }
-
-    @Override
-    public void execute(Context<CommandSender> context) {
-        String text = context.argument("text", String.class);
+@Command(name = "ban")
+public class BanCommand {
+    @Execute
+    public void ban(@Flag("-s") boolean isSilent) {
         // ...
     }
 }
 ```
-</tab>
-</tabs>
 
-LiteCommands supports multiple argument types. You can find all of them in the table below.
+## @Join Argument
 
-| Argument Type | Values                                         | Platforms |
-|---------------|------------------------------------------------|-----------|
-| `Boolean`     | `true`, `false`                                | *         |
-| `Byte`        | `-128` - `127`                                 | *         |
-| `Short`       | `-32768` - `32767`                             | *         |
-| `Integer`     | `-2147483648` - `2147483647`                   | *         |
-| `Long`        | `-9223372036854775808` - `9223372036854775807` | *         |
-| `Float`       | `0.0` - `3.4028235E38`                         | *         |
-| `Double`      | `0.0` - `1.7976931348623157E308`               | *         |
-| `String`      | Any string                                     | *         |
-| `Enum`        | Any enum                                       | *         |
-| `Duration`    | 1d, 1h, 1m, 1s, 1ms                            | *         |
-| `Period`      | 1y, 1mo, 1w, 1d                                | *         |
-| `Instant`     | yyyy-MM-dd HH:mm:ss                            | *         |
-| `Component`   | Any string                                     | Adventure |
-| `Component`   | Any string                                     | Adventure |
-| `Player`      | Any player                                     | Bukkit    |
-| `World`       | Any world                                      | Bukkit    |
-| `Location`    | Any location                                   | Bukkit    |
-| `Player`      | Any player                                     | Minestom  |
+`@Join` is used to get the value from the command sender, it joins all arguments into one string.
 
-// TODO: Add more argument types
-| `UUID`          | Any UUID                                       | All       |
-| `Color`         | Any color                                      | All       |
-| `Enchantment`   | Any enchantment                                | All       |
-| `ChatColor`     | Any chat color                                 | All       |
+```java
+@Command(name = "ban")
+public class BanCommand {
+    @Execute
+    public void ban(@Join String reason) {
+        // ...
+    }
+}
+```
 
+Sometimes you may want to limit the number of arguments that will be joined.
+```java
+@Join(limit = 2)
+```
+
+Or you may want to join arguments with a different separator.
+```java
+@Join(separator = ", ")
+```
+
+## Full Example
+
+```java
+@Command(name = "ban")
+public class BanCommand {
+    @Execute
+    public void ban(@Arg Player player, @Flag("-s") boolean isSilent, @Join String reason) {
+        // ...
+    }
+}
+```

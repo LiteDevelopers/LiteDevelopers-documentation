@@ -30,4 +30,8 @@
         <description>Created after removal of "Programmatic Argument" from LiteCommands</description>
         <accepts>Programmatic-Argument.html</accepts>
     </rule>
+    <rule id="2fe346aa">
+        <description>Created after removal of "| III | Command Str" from LiteCommands</description>
+        <accepts>Features.html</accepts>
+    </rule>
 </rules>
