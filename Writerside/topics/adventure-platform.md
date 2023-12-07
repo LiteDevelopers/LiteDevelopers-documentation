@@ -15,7 +15,7 @@ Add the following dependency to your project:
 <tab title="Gradle KTS">
 
 ```kotlin
-implementation("dev.rollczi:litecommands-adventure-platform:3.0.1")
+implementation("dev.rollczi:litecommands-adventure-platform:%latest_version%")
 ```
 </tab>
 <tab title="Maven">
@@ -24,7 +24,7 @@ implementation("dev.rollczi:litecommands-adventure-platform:3.0.1")
 <dependency>
     <groupId>dev.rollczi</groupId>
     <artifactId>litecommands-adventure-platform</artifactId>
-    <version>3.0.1</version>
+    <version>%latest_version%</version>
 </dependency>
 ```
 </tab>

@@ -34,4 +34,8 @@
         <description>Created after removal of "| III | Command Str" from LiteCommands</description>
         <accepts>Features.html</accepts>
     </rule>
+    <rule id="dbb0302">
+        <description>Created after removal of "Configuration - Bukkit" from LiteCommands</description>
+        <accepts>Configuration-Bukkit.html</accepts>
+    </rule>
 </rules>

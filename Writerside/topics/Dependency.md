@@ -1,4 +1,4 @@
-# Getting started
+# Dependency
 
 This page will guide you through the process of adding LiteCommands to your project.
 <tip>
@@ -43,7 +43,7 @@ Add the following line to your `build.gradle.kts` file in the `dependencies` sec
 <br/><br/>
 
 ```kotlin
-implementation("dev.rollczi:[[[ARTIFACT_ID|Platforms.md]]]:3.0.1")
+implementation("dev.rollczi:[[[ARTIFACT_ID|Platforms.md]]]:%latest_version%")
 ```
 </tab>
 
@@ -56,7 +56,7 @@ Add the following lines to your `pom.xml` file in the `dependencies` section:
 <dependency>
     <groupId>dev.rollczi</groupId>
     <artifactId>[[[ARTIFACT_ID|Platforms.md]]]</artifactId>
-    <version>3.0.1</version>
+    <version>%latest_version%</version>
 </dependency>
 ```
 </tab>
