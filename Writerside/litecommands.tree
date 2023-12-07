@@ -8,13 +8,16 @@
 
     <toc-element topic="Introdution.md">
         <toc-element topic="Dependency.md"/>
-        <toc-element topic="Configuration.md"/>
     </toc-element>
     <toc-element topic="Platforms.md">
         <toc-element topic="SENDER.md"/>
     </toc-element>
+    <toc-element topic="Configuration.md"/>
     <toc-element topic="Command.md"/>
     <toc-element topic="Arguments.md">
+        <toc-element topic="Arg.md"/>
+        <toc-element topic="Flag.md"/>
+        <toc-element topic="Join-Argument.md"/>
         <toc-element topic="Supported-Types.md"/>
         <toc-element topic="Unsupported-Types-TODO.md"/>
         <toc-element topic="Custom-Types.md"/>

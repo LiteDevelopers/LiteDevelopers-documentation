@@ -1,48 +1,8 @@
 # Argument
 
-Arguments are used to get the values from the command sender.
+Arguments are used to parse the command sender's input and complete the command.
 
-## @Arg Argument
 
-`@Arg` is the most common argument. It is used to get the value from the command sender.
-
-```java
-@Command(name = "ban")
-public class BanCommand {
-    @Execute
-    public void ban(@Arg Player player) {
-        // ...
-    }
-}
-```
-
-## @Flag Argument
-
-`@Flag` is used to get the value from the command sender, but it is optional.
-
-```java
-@Command(name = "ban")
-public class BanCommand {
-    @Execute
-    public void ban(@Flag("-s") boolean isSilent) {
-        // ...
-    }
-}
-```
-
-## @Join Argument
-
-`@Join` is used to get the value from the command sender, it joins all arguments into one string.
-
-```java
-@Command(name = "ban")
-public class BanCommand {
-    @Execute
-    public void ban(@Join String reason) {
-        // ...
-    }
-}
-```
 
 Sometimes you may want to limit the number of arguments that will be joined.
 ```java

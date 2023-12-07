@@ -1,4 +1,4 @@
-# Configuration
+# Builder Configuration
 
 Create a new instance of `LiteCommands` using specific factory for your platform.
 
