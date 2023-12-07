@@ -1,0 +1,23 @@
+# Adventure Kyori Extensions
+
+Adventure Kyori is a library that provides a set of utilities for the [Adventure](https://docs.advntr.dev/getting-started.html) library.
+
+If you want to use the Adventure Kyori features in your project, you need to add the following dependency, depending on the platform you are using:
+
+| Platform Artifact         | Extension Artifact                | Compatible Platforms  | Compatible Versions |
+|---------------------------|-----------------------------------|-----------------------|---------------------|
+| `litecommands-bukkit`     | `litecommands-adventure-platform` | Bukkit, Spigot        | 1.8.8 - 1.20.2      |
+| `litecommands-bukkit`     | `litecommands-adventure`          | Paper, Purpur         | 1.16 - 1.20.2       |
+| `litecommands-bungeecord` | `litecommands-adventure-platform` | BungeeCord, Waterfall | 1.20-R0.1           |
+| `litecommands-velocity`   | build-in                          | Velocity              | 3.2.0               |
+| `litecommands-minestom`   | build-in                          | Minestom              | 1.20.2              |
+
+<tip>
+
+Depending on the platform you are using, see the following pages for more information:
+
+- `litecommands-adventure-platform` -> [Adventure Platform](adventure-platform.md)
+- `litecommands-adventure` -> [Adventure](adventure.md)
+- `build-in` means that you don't need to add any additional artifacts to your project.
+
+</tip>

@@ -14,4 +14,28 @@
         <description>Created after removal of "This is the first topic" from Help Instance</description>
         <accepts>Default-topic.html</accepts>
     </rule>
+    <rule id="3cfa662e">
+        <description><![CDATA[Created after removal of "<Why-use-LiteCommands.md>" from LiteCommands]]></description>
+        <accepts>Why-use-LiteCommands.html</accepts>
+    </rule>
+    <rule id="69b50e61">
+        <description>Created after removal of "Bukkit" from LiteCommands</description>
+        <accepts>Bukkit-Platform.html</accepts>
+    </rule>
+    <rule id="6406aeae">
+        <description>Created after removal of "@Arg Annotation" from LiteCommands</description>
+        <accepts>Arg.html</accepts>
+    </rule>
+    <rule id="66f09aab">
+        <description>Created after removal of "Programmatic Argument" from LiteCommands</description>
+        <accepts>Programmatic-Argument.html</accepts>
+    </rule>
+    <rule id="2fe346aa">
+        <description>Created after removal of "| III | Command Str" from LiteCommands</description>
+        <accepts>Features.html</accepts>
+    </rule>
+    <rule id="dbb0302">
+        <description>Created after removal of "Configuration - Bukkit" from LiteCommands</description>
+        <accepts>Configuration-Bukkit.html</accepts>
+    </rule>
 </rules>
