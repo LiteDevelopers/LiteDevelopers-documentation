@@ -36,7 +36,7 @@ implementation("dev.rollczi:litecommands-adventure:%latest_version%")
 Register the extension in the `LiteCommands` builder:
 
 ```java
-.extension(new LiteAdventureExtension<SENDER>()
+.extension(new LiteAdventureExtension<>(), config -> config
     .miniMessage(true)
     .legacyColor(true)
     .colorizeArgument(true)

@@ -38,4 +38,16 @@
         <description>Created after removal of "Configuration - Bukkit" from LiteCommands</description>
         <accepts>Configuration-Bukkit.html</accepts>
     </rule>
+    <rule id="1f5cb281">
+        <description>Created after removal of "Unsupported Types (TODO)" from LiteCommands</description>
+        <accepts>Unsupported-Types-TODO.html</accepts>
+    </rule>
+    <rule id="13f277f2">
+        <description>Created after removal of "@OptionalArg Argument" from LiteCommands</description>
+        <accepts>OptionalArg-Argument.html</accepts>
+    </rule>
+    <rule id="c9b898c">
+        <description>Created after removal of "Optional Argument" from LiteCommands</description>
+        <accepts>Optional-Argument.html</accepts>
+    </rule>
 </rules>

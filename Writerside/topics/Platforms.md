@@ -9,9 +9,3 @@ LiteCommands supports multiple platforms and extensions for them. You can find a
 | `litecommands-bungeecord` | BungeeCord, Waterfall         | 1.20-R0.1           |
 | `litecommands-minestom`   | Minestom                      | 1.20.2              |
 | `litecommands-jda`        | JDA                           | 5.0.0-beta.15       |
-
-
-
-<tabs>
-
-</tabs>

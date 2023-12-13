@@ -35,7 +35,7 @@ implementation("dev.rollczi:litecommands-adventure-platform:%latest_version%")
 Register the extension in the `LiteCommands` builder:
 
 ```java
-.extension(new LiteAdventurePlatformExtension<SENDER>(this.audienceProvider)
+.extension(new LiteAdventurePlatformExtension<>(this.audienceProvider), config -> config
     .miniMessage(true)
     .legacyColor(true)
     .colorizeArgument(true)

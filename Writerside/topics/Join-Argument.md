@@ -6,9 +6,7 @@ useful when you want to combine several input parameters into a cohesive
 text representation, such as creating a reason for a ban command.
 
 ## Usage
-The `@Join` annotation is applied to a parameter within a command method
-that should be treated as a concatenated string. Here is an example of
-how to use the `@Join` annotation:
+Here is an example of how to use the `@Join` annotation:
 
 ```Java
 @Command(name = "ban")
@@ -23,26 +21,26 @@ public class BanCommand {
 }
 ```
 
-## Example
 Let's consider the following command usage:
 
 ```
-/ban JohnDoe Offensive language and behavior
-target = JohnDoe
-reason = Offensive language and behavior
+input: /ban JohnDoe Offensive language and behavior
+reason: Offensive language and behavior
 ```
-
-## Notes
-- The `@Join` annotation is particularly useful when you want to capture a variable number of arguments into a single string.
-- The joined string includes spaces between the original arguments, making it suitable for textual descriptions or reasons.
 
 ## Additional Options
 
+Sometimes you may want to limit the number of arguments that will be joined.
+```java
+@Join(limit = 2)
+```
 
-- The `limit` option allows developers to specify the
-maximum number of arguments to include in the joined string. 
-- On the other hand, the `separator` option enables developers to define a custom string that separates each joined
-argument, allowing for fine-grained control over formatting.
+Or you may want to join arguments with a different separator.
+```java
+@Join(separator = ", ")
+```
+
+Or both:
 
 ```java
 @Command(name = "ban")
@@ -61,6 +59,5 @@ Let's consider the following command usage:
 
 ```
 /ban JohnDoe Offensive language and behavior
-target = JohnDoe
-reason = Offensive-language-and-behavior
+reason: Offensive-language-and-behavior
 ```
