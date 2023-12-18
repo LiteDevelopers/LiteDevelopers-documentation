@@ -1,4 +1,4 @@
-# Adventure
+# Install (adventure)
 
 LiteCommands Adventure is an extension for supporting Kyori Adventure features 
 for platforms that are have native support for it. E.g. Paper, Purpur, Velocity, Minestom, etc.

@@ -1,4 +1,4 @@
-# Introduction
+# What is LiteCommands?
 
 <img alt="litecommands.png" src="litecommands.png" width="480"/>
 

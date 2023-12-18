@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/xhtml-entities.dtd">
+<topic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/topic.v2.xsd"
+       title="LiteCommands Features" id="Features-of-LiteCommands">
+
+    <section-starting-page>
+        <title>LiteCommands Features</title>
+        <description>
+            LiteCommands offers a wide range of features to make your coding experience better.
+        </description>
+
+        <spotlight>
+            <a href="Platforms.md"
+               description="Cross-platform support" type="start"/>
+            <a href="Adventure-Kyori.md"
+               description="Adventure support" type="navigation"/>
+        </spotlight>
+
+        <primary>
+            <title>IntelliJ IDEA Plugin</title>
+            <a href="IntelliJ-IDEA-Plugin.md"
+               description="LiteCommands has an IntelliJ IDEA plugin!"/>
+            ...
+        </primary>
+
+        <secondary>
+            <title>Jakarta Support</title>
+            <a href="Jakarta-Extension.md"
+               description="LiteCommands supports Jakarta!"/>
+            ...
+        </secondary>
+
+        <misc>
+            <cards>
+                <title>Annotations</title>
+                <a href="Arg.md"/>
+                <a href="Join-Argument.md"/>
+                <a href="Flag.md"/>
+                <a href="optionalarg-null-way.md"/>
+                ...
+            </cards>
+        </misc>
+    </section-starting-page>
+</topic>

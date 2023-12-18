@@ -1,4 +1,4 @@
-# Adventure Platform
+# Install (adventure-platform)
 
 LiteCommands Adventure Platform is an extension for supporting Kyori Adventure features 
 for platforms that are doesn't have native support for it. E.g. Bukkit, BungeeCord, etc.
