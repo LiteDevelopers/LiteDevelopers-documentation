@@ -13,6 +13,7 @@
     <toc-element topic="IntelliJ-IDEA-Plugin.md"/>
     <toc-element toc-title="Getting Started">
         <toc-element topic="Dependency.md"/>
+        <toc-element topic="Parameters-compile-flag.md"/>
     </toc-element>
     <toc-element topic="Platforms.md">
         <toc-element topic="SENDER.md"/>
