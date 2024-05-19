@@ -16,7 +16,13 @@ env:
   INSTANCE: Writerside/litecommands
   ARTIFACT: webHelpLITECOMMANDS2-all.zip
   # Docker image version
-  DOCKER_VERSION: 232.10275
+  DOCKER_VERSION: 241.15989
+  ALGOLIA_ARTIFACT: 'algolia-indexes-LITECOMMANDS.zip'
+  ALGOLIA_APP_NAME: 'AA5N7A7U42'
+  ALGOLIA_INDEX_NAME: 'litecommands'
+  ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
+  CONFIG_JSON_PRODUCT: 'LITECOMMANDS'
+  CONFIG_JSON_VERSION: '2.0'
 
 jobs:
   build:
@@ -25,6 +31,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Build Writerside docs using Docker
         uses: JetBrains/writerside-github-action@v4
@@ -34,7 +42,7 @@ jobs:
           docker-version: ${{ env.DOCKER_VERSION }}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: docs
           path: |
@@ -51,7 +59,7 @@ jobs:
 
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: docs
 
@@ -59,13 +67,35 @@ jobs:
         run: unzip -O UTF-8 -qq ${{ env.ARTIFACT }} -d dir
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v4
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Package and upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dir
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
+
+  publish-indexes:
+    needs: [ build, deploy ]
+    runs-on: ubuntu-latest
+    container:
+      image: registry.jetbrains.team/p/writerside/builder/algolia-publisher:2.0.32-3
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs
+      - name: Unzip artifact
+        run: |
+          unzip -O UTF-8 -qq '${{ env.ALGOLIA_ARTIFACT }}' -d algolia-indexes
+          env algolia-key='${{env.ALGOLIA_KEY}}' java -jar /opt/builder/help-publication-agent.jar \
+          update-index \
+          --application-name '${{env.ALGOLIA_APP_NAME}}' \
+          --index-name '${{env.ALGOLIA_INDEX_NAME}}' \
+          --product '${{env.CONFIG_JSON_PRODUCT}}' \
+          --version '${{env.CONFIG_JSON_VERSION}}' \
+          --index-directory algolia-indexes/ \
+          2>&1 | tee algolia-update-index-log.txt

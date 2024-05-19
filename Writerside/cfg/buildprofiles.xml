@@ -2,11 +2,14 @@
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <build-profile instance="hi">
+    <build-profile instance="litecommands">
         <variables>
             <noindex-content>true</noindex-content>
             <primary-color>purple</primary-color>
             <color-preset>purple</color-preset>
+            <algolia-id>AA5N7A7U42</algolia-id>
+            <algolia-index>litecommands</algolia-index>
+            <algolia-api-key>b36a06ddbc4e036fb9dffc0ed94e22ac</algolia-api-key>
         </variables>
     </build-profile>
 
