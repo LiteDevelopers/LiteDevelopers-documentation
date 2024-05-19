@@ -43,4 +43,4 @@ result: isSilent = true
 > The order of flags in the input does matter.
 { style="warning" }
 > 
-<video src="../images/argument/flag/muteCommandExample.mp4" controls/>
+<video src="../images/argument/flag/muteCommandExample.mp4"/>

@@ -64,4 +64,4 @@ public class BanCommand {
 
 See the demo of ChatGPT extension in action:
 
-<video src="../images/chat-gpt/chat-gpt.mp4" controls/>
+<video src="../images/chat-gpt/chat-gpt.mp4"/>

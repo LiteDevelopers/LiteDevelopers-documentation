@@ -40,4 +40,5 @@ In this case, the `target` parameter will represent the player "JohnDoe,"
 the `item` parameter will represent the material DIAMOND,
 and the `amount` parameter will represent the integer value 3.
 
-<video src="../images/argument/arg/giveCommandExample.mp4" controls/>
+
+<video src="../images/argument/arg/giveCommandExample.mp4"/>
