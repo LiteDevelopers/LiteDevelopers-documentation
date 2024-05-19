@@ -7,39 +7,95 @@ Create a new instance of `LiteCommands` using specific factory for your platform
 <!-- Bukkit -->
 <tab title="Bukkit">
 
+<warning>
+<b><u>Don't</u></b> add any commands to <code>plugin.yml</code>! If you have declared commands in the <code>plugin.yml</code> then LiteCommands will <b>not able</b> to register them.
+</warning>
+<br/>
+
 ```Java
-this.liteCommands = LiteCommandsBukkit.builder("my-plugin", this)
-    .commands(
-        new FlyCommand(),
-        new GameModeCommand()
-    )
-    .build();
+public class MyPlugin extends JavaPlugin {
+
+    private LiteCommands<CommandSender> liteCommands;
+
+    @Override
+    public void onEnable() {
+        this.liteCommands = LiteBukkitFactory.builder("my-plugin", this)
+            .commands(
+                new FlyCommand(),
+                new GameModeCommand()
+            )
+            .build();
+            
+        // your code ...
+    }
+    
+    @Override
+    public void onDisable() {
+        this.liteCommands.unregister();
+    }
+    
+}
 ```
+
 </tab>
 
 <!-- Velocity -->
 <tab title="Velocity">
 
 ```Java
- this.liteCommands = LiteVelocityFactory.builder(this.proxyServer)
-     .commands(
-         new SendCommand(),
-         new MoveCommand()
-     )
-     .build();
+@Plugin(id = "example-plugin", name = "ExamplePlugin", version = "1.0.0")
+public class ExamplePlugin {
+
+    private final ProxyServer proxyServer;
+    private LiteCommands<CommandSource> liteCommands;
+
+    @Inject
+    public ExamplePlugin(ProxyServer proxyServer) {
+        this.proxyServer = proxyServer;
+    }
+
+    @Subscribe
+    public void onProxyInitialization(ProxyInitializeEvent event) {
+        this.liteCommands = LiteVelocityFactory.builder(this.proxyServer)
+            .commands(
+                new SendCommand(),
+                new MoveCommand()
+            )
+            .build();
+            
+        // your code ...
+    }
+    
+    @Subscribe
+    public void onProxyShutdown(ProxyShutdownEvent event) {
+        this.liteCommands.unregister();
+    }
+}
 ```
+
 </tab>
 
 <!-- BungeeCord -->
 <tab title="BungeeCord">
 
 ```Java
- this.liteCommands = LiteBungeeFactory.builder(this)
-     .commands(
-         new SendCommand(),
-         new MoveCommand()
-     )
-     .build();
+public class ExamplePlugin extends Plugin {
+
+    private LiteCommands<CommandSender> liteCommands;
+
+    @Override
+    public void onEnable() {
+        this.liteCommands = LiteBungeeFactory.builder(this)
+            .commands(
+                new SendCommand(),
+                new MoveCommand()
+            )
+            .build();
+            
+        // your code ...
+    }
+}
+
 ```
 </tab>
 
@@ -47,15 +103,62 @@ this.liteCommands = LiteCommandsBukkit.builder("my-plugin", this)
 <tab title="Minestom">
 
 ```Java
-Server server = MinecraftServer.getServer();
-CommandManager commandManager = MinecraftServer.getCommandManager();
+public class ExampleMinestom {
 
-this.liteCommands = LiteMinestomFactory.builder(server, commandManager)
-    .commands(
-       new FlyCommand(),
-       new GameModeCommand()
-    )
-    .build();
+    public static void main(String[] args) {
+        LiteMinestomFactory.builder()
+            .commands(
+               new FlyCommand(),
+               new GameModeCommand()
+            )
+            .build();
+            
+        // your code ...
+    }
+}
+```
+</tab>
+
+<!-- Sponge -->
+<tab title="Sponge">
+
+```Java
+@Plugin("sponge-plugin")
+public class SpongePlugin {
+
+    @Inject
+    public SpongePlugin(PluginContainer pluginContainer, Game game) {
+        LiteSpongeFactory.builder(pluginContainer, game)
+            .commands(
+                new TeleportCommand(),
+                new KickCommand()
+            )
+            .build();
+            
+        // your code ...
+    }
+}
+```
+</tab>
+
+<!-- Fabric -->
+<tab title="Fabric">
+
+```Java
+public class ExampleFabric implements ModInitializer {
+
+    @Override
+    public void onInitialize() {
+        LiteFabricFactory.create()
+            .commands(
+                new BanCommand(),
+                new MuteCommand()
+            )
+            .build();
+        
+        // your code ...
+    }
+}
 ```
 </tab>
 
@@ -63,15 +166,22 @@ this.liteCommands = LiteMinestomFactory.builder(server, commandManager)
 <tab title="JDA">
 
 ```Java
-JDA jda = JDABuilder.createDefault("token")
-    .build();
+public class ExampleJDA {
 
-this.liteCommands = LiteJDAFactory.builder(jda)
-    .commands(
-       new EmbedCommand(),
-       new MessageCommand()
-    )
-    .build();
+    public static void main(String[] args) {
+        JDA jda = JDABuilder.createDefault("token")
+            .build();
+        
+        LiteJDAFactory.builder(jda)
+            .commands(
+               new EmbedCommand(),
+               new MessageCommand()
+            )
+            .build();
+        
+        // your code ...
+    }
+}
 ```
 </tab>
 
