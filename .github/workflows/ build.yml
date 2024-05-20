@@ -17,7 +17,7 @@ env:
   ARTIFACT: webHelpLITECOMMANDS2-all.zip
   # Docker image version
   DOCKER_VERSION: 241.15989
-  ALGOLIA_ARTIFACT: 'algolia-indexes-HI.zip'
+  ALGOLIA_ARTIFACT: 'algolia-indexes-LITECOMMANDS.zip'
   ALGOLIA_APP_NAME: 'AA5N7A7U42'
   ALGOLIA_INDEX_NAME: 'litecommands'
   ALGOLIA_KEY: '${{ secrets.ALGOLIA_KEY }}'
@@ -48,6 +48,7 @@ jobs:
           path: |
             artifacts/${{ env.ARTIFACT }}
             artifacts/report.json
+            artifacts/${{ env.ALGOLIA_ARTIFACT }}
           retention-days: 7
 
   test:

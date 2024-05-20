@@ -10,6 +10,7 @@
             <algolia-id>AA5N7A7U42</algolia-id>
             <algolia-index>litecommands</algolia-index>
             <algolia-api-key>b36a06ddbc4e036fb9dffc0ed94e22ac</algolia-api-key>
+            <web-root>docs.rollczi.dev</web-root>
         </variables>
     </build-profile>
 
