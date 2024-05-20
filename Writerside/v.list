@@ -3,6 +3,6 @@
 <vars>
     <var name="product" value="LiteCommands"/>
     <var name="latest_version"
-         value="3.2.0"
+         value="3.4.1"
     />
 </vars>
