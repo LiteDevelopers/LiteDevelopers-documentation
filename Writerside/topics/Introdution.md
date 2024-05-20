@@ -1,6 +1,6 @@
 # What is LiteCommands?
 
-<img alt="litecommands.png" src="litecommands.png" width="480"/>
+<img alt="litecommands.png" src="litecommands.png" width="520"/>
 
 LiteCommands is a versatile and feature-rich command framework
 designed to simplify command handling for a wide range of platforms and implementations.
@@ -25,7 +25,7 @@ compared to the traditional methods.
 
 ```java
 
-@[[[Command|Platforms.md]]](name = "chat")
+@Command(name = "chat")
 @Permission("command.chat")
 public class ChatCommand {
 
